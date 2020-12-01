@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>365Schoon</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-app">
+            <a href="index.html" class="header-title header-subtitle">homepages</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fa fa-arrow-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-2"><i class="fas fa-bars"></i></a>
+            <a href="#" data-menu="menu-colors" class="header-icon header-icon-3"><i class="fas fa-cog"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-4 show-on-theme-dark"><i class="fas fa-lightbulb color-yellow-dark"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-4 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        </div>
+
+        <!-- Menus-->
+        <div id="menu-main" data-menu-load="menu-main.html" data-menu-active="nav-homepages" class="menu menu-box-left rounded-0" data-menu-width="250" data-menu-effect="menu-parallax"> </div>
+        <div id="menu-colors" data-menu-load="menu-colors.html" data-menu-effect="menu-parallax" class="menu menu-box-right" data-menu-width="75"></div>
+
+        <div class="page-content mb-0">
+
+            <div class="card mb-0" data-card-height="cover-card">
+                <div class="card-center">
+                    <h2 class="font-800 text-center font-40 text-uppercase">Login</h2>
+                    <p class="mt-1 text-center color-highlight font-12">Let's get you Logged In</p>
+                    <div style="max-width:300px;" class="mx-auto">
+                        <div class="input-style input-style-1 has-icon input-required">
+                            <i class="input-icon fa fa-user"></i>
+                            <span class="color-highlight">Name</span>
+                            <em>(required)</em>
+                            <input class="form-control" type="name" placeholder="Username" id="EMAIL">
+                        </div>
+                        <div class="input-style input-style-1 has-icon input-required">
+                            <i class="input-icon fa fa-lock"></i>
+                            <span class="color-highlight">Password</span>
+                            <em>(required)</em>
+                            <input class="form-control" type="name" placeholder="Password" id="PASSWORD">
+                        </div>
+                        <div class="form-check icon-check mt-3 opacity-60">
+                            <input class="form-check-input" type="checkbox" value="" id="check1">
+                            <label class="form-check-label" for="check1">Remember Me</label>
+                            <i class="icon-check-1 fa fa-square color-gray-dark font-16 ml-n1"></i>
+                            <i class="icon-check-2 fa fa-check-square font-16 color-highlight ml-n1"></i>
+                        </div>
+                        <a href="#" class="btn btn-sm bg-green-dark btn-full shadow-xl text-uppercase font-800 rounded-s mt-5" id="Do_Login">LOGIN</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Page content ends here-->
+
+
+
+    </div>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <script>
+
+
+        if (window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+            $("#EMAIL").val(window.localStorage["username"]);
+            $("#PASSWORD").val(window.localStorage["password"]);
+        }
+
+
+        $('#Do_Login').click(function () {
+            var user = $('#EMAIL').val();
+            var pass = $('#PASSWORD').val();
+
+            //store
+            window.localStorage["username"] = user;
+            window.localStorage["password"] = pass;    
+
+            window.location = "index.html?EMAIL=" + user + "&PASSWORD=" + pass;
+        });
+
+
+    </script>
+</body>
+</html>
