@@ -43,14 +43,11 @@
 </head>
 
 <body>
-    <script src="scripts/jquery.js"></script>
 
-    <script type="text/javascript">
-
-
-
-        // Read a page's GET URL variables and return them as an associative array.
-        function getUrlVars() {
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+   
+<script>
+function getUrlVars() {
             var vars = [], hash;
             var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
             for (var i = 0; i < hashes.length; i++) {
@@ -80,13 +77,9 @@
 
             var Email = getUrlVars()["EMAIL"];
             var Password = getUrlVars()["PASSWORD"];
-            var url = "https://schoon.dynawix.com/Serv-login.aspx?EMAIL=" + Email + "&PASSWORD=" + Password
-
-
-
+            var url = "https://schoon.dynawix.com/serv-login.aspx?EMAIL=" + Email + "&PASSWORD=" + Password;
             $('#iView').attr('src', url);
 
-            alert(url);
 
 
 
@@ -95,6 +88,8 @@
 
 
     </script>
+
+        
     <iframe src="" id="iView" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;background:url(img/loader.gif) center center no-repeat;" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *;" />
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -105,7 +100,6 @@
 
 
     </script>
-
 
 
 </body>

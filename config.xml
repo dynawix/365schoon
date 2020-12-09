@@ -7,7 +7,7 @@ Dynawix Solutions
     <author email="admin@dynawix.com" href="http://dynawix.com">
         Dynawix team
     </author>
-    <content src="Login.html" />
+    <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16"/>
 	<preference name="android-targetSdkVersion" value="28" />
